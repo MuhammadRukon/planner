@@ -1,22 +1,32 @@
-const Card = () => {
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+const Card = ({ data }) => {
+  const { id, image, description, title } = data;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10">
+    <div className="card border rounded-md">
+      <figure className="w-full h-[250px] pt-4 px-4 ">
         <img
-          src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+          src={image}
           alt="Shoes"
-          className="rounded-xl"
+          className="w-full h-full object-cover rounded-md"
         />
       </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div className="card-body pb-8 items-center text-center">
+        <h2 className="card-title font-primary text-2xl">{title}</h2>
+        <p>{description}</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <Link
+            to={`/details/${id}`}
+            className="btn mt-2 btn-primary border-none bg-primary hover:bg-primary text-black"
+          >
+            View Details
+          </Link>
         </div>
       </div>
     </div>
   );
 };
-
+Card.propTypes = {
+  data: PropTypes.object,
+};
 export default Card;

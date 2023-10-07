@@ -71,7 +71,7 @@ const Navbar = () => {
         <p className={` ${user?.displayName ? "uppercase font-bold" : ""}`}>
           {user ? user.displayName : "user"}
         </p>
-        <div className="w-12 h-12 overflow-hidden bg-primary rounded-full">
+        <div className="w-10 h-10 overflow-hidden bg-primary rounded-full">
           <img
             src={user?.photoURL || "defaultUser.png"}
             alt=""
@@ -80,7 +80,7 @@ const Navbar = () => {
         </div>
         {user ? (
           <Link
-            className="btn bg-primary  border-none hover:bg-[#ffcffd70]"
+            className="btn h-10 min-h-[40px]  bg-primary font-primary border-none hover:bg-[#ffcffd70]"
             onClick={() => handleLogOut()}
           >
             Logout
@@ -88,7 +88,7 @@ const Navbar = () => {
         ) : (
           <Link
             to="/login"
-            className="btn bg-primary  border-none hover:bg-[#ffcffd70]"
+            className="btn h-10 min-h-[40px] bg-primary font-primary border-none hover:bg-[#ffcffd70]"
           >
             Login
           </Link>

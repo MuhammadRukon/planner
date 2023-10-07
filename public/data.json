@@ -5,7 +5,7 @@
     "category": "Catering",
     "description": "Delicious gourmet catering for your wedding guests.",
     "cost": 7000,
-    "image": "https://ibb.co/yW85tC0"
+    "image": "https://i.ibb.co/kQh0jTK/catering1.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "category": "Photography",
     "description": "Capture your special moments with experienced photographers.",
     "cost": 3000,
-    "image": "https://ibb.co/nndGwBw"
+    "image": "https://i.ibb.co/z5dnGw7/photography1.jpg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "category": "Decorations",
     "description": "Transform your venue with stunning floral decorations.",
     "cost": 4000,
-    "image": "https://ibb.co/8KtXKMt"
+    "image": "https://i.ibb.co/4m3JmW3/decor1.jpg"
   },
 
   {
@@ -30,7 +30,7 @@
     "category": "Catering",
     "description": "Exquisite cuisine to delight your guests' taste buds.",
     "cost": 10000,
-    "image": "https://ibb.co/XFJynpY"
+    "image": "https://i.ibb.co/bNdH4Lb/caterign2.jpg"
   },
   {
     "id": 5,
@@ -38,7 +38,7 @@
     "category": "Photography",
     "description": "Creative and artistic wedding photography services.",
     "cost": 5000,
-    "image": "https://ibb.co/nndGwBw"
+    "image": "https://i.ibb.co/BrWpfGf/photography2.jpg"
   },
   {
     "id": 6,
@@ -46,6 +46,6 @@
     "category": "Decorations",
     "description": "Create a rustic atmosphere with charming decorations.",
     "cost": 7000,
-    "image": "https://ibb.co/WFddf14"
+    "image": "https://i.ibb.co/5vzzLVg/decor2.jpg"
   }
 ]
