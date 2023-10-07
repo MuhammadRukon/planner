@@ -1,6 +1,6 @@
 const ContactUs = () => {
   return (
-    <>
+    <div className="bg-[#ffcffd60] p-10 rounded-lg">
       <h2 className="text-left font-bold font-primary text-4xl">Contact Us</h2>
       <form className="card-body p-0 mt-7">
         <div className="flex gap-4">
@@ -44,12 +44,12 @@ const ContactUs = () => {
           placeholder="Write here..."
         ></textarea>
         <div className="form-control mt-6">
-          <button className="btn bg-primary hover:bg-primary border-none">
+          <button className="btn bg-primary hover:bg-primary border-pink-200">
             Mail
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

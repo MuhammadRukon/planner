@@ -3,12 +3,17 @@ import MainLayout from "../layout/MainLayout";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import Home from "../pages/home/Home";
+import Details from "../pages/details/Details";
+import Services from "../components/Services";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/error/ErrorPage";
+import Profile from "../pages/profile/Profile";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <p>error 404. Page not found</p>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -20,36 +25,34 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/about",
-        element: <p>about</p>,
-      },
-      {
         path: "/register",
         element: <Register />,
       },
       {
         path: "/details/:id",
-        element: <h1>details</h1>,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/data.json"),
       },
       {
         path: "/blog",
         element: <p>blog</p>,
       },
       {
-        path: "/book",
-        element: <p>book</p>,
-      },
-      {
-        path: "/plans",
-        element: <p>plans</p>,
-      },
-      {
-        path: "/contact",
-        element: <p>contact</p>,
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/services",
-        element: <p>services</p>,
+        element: <Services />,
+        loader: () => fetch("/data.json"),
       },
     ],
   },

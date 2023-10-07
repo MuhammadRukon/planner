@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const navigate = useNavigate();
   const { createUser, updateUser } = useContext(AuthContext);
   const formRef = useRef(null);
   const [errorMsg, setErrorMsg] = useState("");
@@ -29,11 +32,14 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        toast.success("Succesfully Signed Up!", {
+          autoClose: 3000,
+        });
         updateUser(name, photo)
           .then(() => console.log("user Updated"))
           .catch((error) => console.log(error.message));
+        setTimeout(() => navigate("/"), 3000);
       })
       .catch((error) => {
         setErrorMsg(error.message);
@@ -43,7 +49,7 @@ const Register = () => {
   return (
     <>
       <div>
-        <div className="hero min-h-screen">
+        <div className="hero min-h-[85vh]">
           <div className="hero-content flex-col">
             <div className="text-center">
               <h1 className="text-5xl font-bold font-primary">Register now!</h1>
@@ -95,7 +101,9 @@ const Register = () => {
                       className="input input-bordered focus:outline-none"
                     />
                   </div>
-                  <p>{errorMsg ? errorMsg : ""}</p>
+                  <p className="text-red-600 text-sm mt-2 mx-2">
+                    {errorMsg ? errorMsg : ""}
+                  </p>
                   <div className="form-control mt-6">
                     <button className="btn bg-primary hover:bg-primary border-none">
                       Register
@@ -105,7 +113,7 @@ const Register = () => {
                 <SocialLogin />
                 <p>
                   Already have an account? Please{" "}
-                  <Link className="text-green-700" to="/login">
+                  <Link className="text-green-700 font-bold" to="/login">
                     Login
                   </Link>
                 </p>
@@ -114,6 +122,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

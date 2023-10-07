@@ -4,11 +4,13 @@ import Footer from "../shared/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="container mx-auto">
-      <Navbar />
+    <>
+      <div className="bg-[#ffcffd40]">
+        <Navbar />
+      </div>
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 

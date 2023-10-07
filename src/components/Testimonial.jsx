@@ -1,14 +1,14 @@
 import { AiFillStar } from "react-icons/ai";
 const Testimonial = () => {
   return (
-    <>
+    <div className="container mx-auto mb-24">
       <h2 className="text-center mt-20 font-bold font-primary text-5xl">
         Our Happy Clients
       </h2>
       <div className="carousel w-full mt-16 rounded-lg">
         <div
           id="slide1"
-          className="carousel-item relative w-full bg-[#ffcffd70] py-20"
+          className="carousel-item relative w-full bg-[#ffcffd40] py-20"
         >
           <div className="card flex-col lg:flex-row w-[80%] md:w-[60%] mx-auto items-center gap-4 md:gap-8 card-side p-8 bg-white drop-shadow-[0px_0px_30px_rgba(153,42,163,0.3)]">
             <figure className="w-full h-full md:w-[300px]">
@@ -183,7 +183,7 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

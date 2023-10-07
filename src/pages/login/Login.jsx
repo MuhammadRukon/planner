@@ -1,26 +1,39 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { loginUser } = useContext(AuthContext);
   const formRef = useRef(null);
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setErrorMsg("");
     const email = formRef.current.email.value;
     const password = formRef.current.password.value;
     loginUser(email, password)
-      .then((result) => console.log(result.user))
+      .then(() => {
+        toast.success("Succesfully Logged In!", {
+          autoClose: 2000,
+        });
+        setTimeout(
+          () => navigate(location?.state ? location.state : "/"),
+          3000
+        );
+      })
       .catch((error) => setErrorMsg(error.message));
     formRef.current.reset();
   };
   return (
     <>
       <div>
-        <div className="hero min-h-screen">
+        <div className="hero min-h-[70vh]">
           <div className="hero-content flex-col">
             <div className="text-center">
               <h1 className="text-5xl font-bold font-primary">Login now!</h1>
@@ -65,7 +78,7 @@ const Login = () => {
                 <SocialLogin />
                 <p>
                   Dont have an account? Please{" "}
-                  <Link className="text-green-700" to="/register">
+                  <Link className="text-blue-500 font-bold" to="/register">
                     register
                   </Link>
                 </p>
@@ -73,6 +86,7 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );

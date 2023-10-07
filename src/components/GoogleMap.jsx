@@ -6,7 +6,7 @@ const GoogleMap = () => {
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
       title="Responsive Google Map"
-      className="w-full h-full"
+      className="w-full h-full bg-[#ffcffd60] rounded-lg"
     ></iframe>
   );
 };

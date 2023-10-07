@@ -1,12 +1,25 @@
 import { useContext } from "react";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { AuthContext } from "../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { signInWithGoogle } = useContext(AuthContext);
   const handleLogin = () => {
     signInWithGoogle()
-      .then((result) => console.log(result.user))
+      .then(() => {
+        toast.success("Succesfully Logged In!", {
+          autoClose: 2000,
+        });
+        setTimeout(
+          () => navigate(location?.state ? location.state : "/"),
+          3000
+        );
+      })
       .catch((error) => console.log(error.message));
   };
   return (
@@ -18,6 +31,7 @@ const SocialLogin = () => {
           <AiFillGoogleCircle />
         </button>
       </div>
+      <ToastContainer />
     </>
   );
 };

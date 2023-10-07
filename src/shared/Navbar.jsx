@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
   const handleLogOut = () => {
     logOut()
       .then(() => console.log("logged Out Successfully"))
@@ -17,22 +18,25 @@ const Navbar = () => {
       <li>
         <NavLink to="/services">Services</NavLink>
       </li>
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
-      <li>
-        <NavLink to="/book">Book</NavLink>
-      </li>
-      <li>
-        <NavLink to="/blog">Blog</NavLink>
-      </li>
-      <li>
-        <NavLink to="/about">About</NavLink>
-      </li>
+      {!user && (
+        <li>
+          <NavLink to="/register">Register</NavLink>
+        </li>
+      )}
+      {user && (
+        <>
+          <li>
+            <NavLink to="/blog">Blog</NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">Profile</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
-    <div className="navbar md:p-0 md:my-4">
+    <div className=" container mx-auto navbar md:p-0 md:py-6">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -73,7 +77,7 @@ const Navbar = () => {
         </p>
         <div className="w-10 h-10 overflow-hidden bg-primary rounded-full">
           <img
-            src={user?.photoURL || "defaultUser.png"}
+            src={user?.photoURL || "/defaultUser.png"}
             alt=""
             className="object-cover h-full w-full"
           />
