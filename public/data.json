@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Elegant Garden Wedding Venue",
+    "category": "Venue",
+    "description": "A beautiful garden venue with lush greenery and flowers.",
+    "cost": 5000.0,
+    "image": "venue1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Gourmet Catering Package",
+    "category": "Catering",
+    "description": "Delicious gourmet catering for your wedding guests.",
+    "cost": 7000.0,
+    "image": "catering1.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Professional Wedding Photography",
+    "category": "Photography",
+    "description": "Capture your special moments with experienced photographers.",
+    "cost": 3000.0,
+    "image": "photography1.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Romantic Floral Decorations",
+    "category": "Decorations",
+    "description": "Transform your venue with stunning floral decorations.",
+    "cost": 2500.0,
+    "image": "decorations1.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Grand Ballroom Venue",
+    "category": "Venue",
+    "description": "An opulent ballroom for your extravagant wedding.",
+    "cost": 8000.0,
+    "image": "venue2.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Exquisite Cuisine Catering",
+    "category": "Catering",
+    "description": "Exquisite cuisine to delight your guests' taste buds.",
+    "cost": 6500.0,
+    "image": "catering2.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Artistic Wedding Photography",
+    "category": "Photography",
+    "description": "Creative and artistic wedding photography services.",
+    "cost": 3500.0,
+    "image": "photography2.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Rustic Wedding Decorations",
+    "category": "Decorations",
+    "description": "Create a rustic atmosphere with charming decorations.",
+    "cost": 2800.0,
+    "image": "decorations2.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Seaside Beachfront Venue",
+    "category": "Venue",
+    "description": "Exchange vows with the sea as your backdrop.",
+    "cost": 6000.0,
+    "image": "venue3.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Family-Style Catering",
+    "category": "Catering",
+    "description": "Share a meal with your loved ones with family-style catering.",
+    "cost": 7200.0,
+    "image": "catering3.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Cinematic Wedding Videography",
+    "category": "Photography",
+    "description": "Capture your wedding story in a cinematic style.",
+    "cost": 4000.0,
+    "image": "photography3.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Luxury Floral Arrangements",
+    "category": "Decorations",
+    "description": "Elevate your decor with luxury floral arrangements.",
+    "cost": 3200.0,
+    "image": "decorations3.jpg"
+  }
+]

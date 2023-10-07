@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Venue"
+  },
+  {
+    "id": 2,
+    "name": "Catering"
+  },
+  {
+    "id": 3,
+    "name": "Photography"
+  },
+  {
+    "id": 4,
+    "name": "Decorations"
+  }
+]
