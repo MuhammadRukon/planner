@@ -1,37 +1,33 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Shared/Navbar/Navbar";
-// import { useContext } from "react";
-// import { AuthContext } from "../../provider/AuthProvider";
+import SocialLogin from "../../shared/SocialLogin";
+import { useContext, useRef, useState } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-  //   const { signInUser } = useContext(AuthContext);
-  //   const location = useLocation();
-  //   console.log(location);
-  //   const navigate = useNavigate();
-  //   const handleLogin = (e) => {
-  //     e.preventDefault();
-  //     // const email = e.target.email.value;
-  //     // const password = e.target.password.value;
+  const { loginUser } = useContext(AuthContext);
+  const formRef = useRef(null);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  //     const form = new FormData(e.currentTarget);
-  //     const email = form.get("email");
-  //     const password = form.get("password");
-  //     signInUser(email, password)
-  //       .then(() => navigate(location?.state ? location.state : "/"))
-  //       .catch((error) => console.log(error.message));
-  //   };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = formRef.current.email.value;
+    const password = formRef.current.password.value;
+    loginUser(email, password)
+      .then((result) => console.log(result.user))
+      .catch((error) => setErrorMsg(error.message));
+    formRef.current.reset();
+  };
   return (
     <>
-      <Navbar />
       <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen">
           <div className="hero-content flex-col">
             <div className="text-center">
-              <h1 className="text-5xl font-bold">Login now!</h1>
+              <h1 className="text-5xl font-bold font-primary">Login now!</h1>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 w-full max-w-sm bg-[#ffcffd70] border">
               <div className="card-body">
-                <form>
+                <form onSubmit={handleLogin} ref={formRef}>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text">Email</span>
@@ -40,7 +36,7 @@ const Login = () => {
                       type="email"
                       name="email"
                       placeholder="email"
-                      className="input input-bordered"
+                      className="input input-bordered focus:outline-none"
                     />
                   </div>
                   <div className="form-control">
@@ -51,7 +47,7 @@ const Login = () => {
                       type="password"
                       name="password"
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered focus:outline-none"
                     />
                   </div>
                   <label className="label">
@@ -59,10 +55,14 @@ const Login = () => {
                       Forgot password?
                     </a>
                   </label>
+                  <p>{errorMsg}</p>
                   <div className="form-control mt-6">
-                    <button className="btn btn-primary">Login</button>
+                    <button className="btn border-none hover:bg-primary bg-primary">
+                      Login
+                    </button>
                   </div>
                 </form>
+                <SocialLogin />
                 <p>
                   Dont have an account? Please{" "}
                   <Link className="text-green-700" to="/register">

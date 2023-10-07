@@ -4,7 +4,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: "'Dancing Script', cursive",
+        logo: "'Dancing Script', cursive",
+        primary: "'Courgette', cursive;",
+        secondary: "'Roboto Serif', serif;",
+      },
+
+      backgroundImage: {
+        hero: "url('https://i.ibb.co/7z6DpH5/banner-Image.jpg')",
+      },
+      colors: {
+        primary: "#ffcffd",
       },
     },
   },

@@ -1,4 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800;1,8..144,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nabvar-ul li {
+  text-align: center;
+}
+.nabvar-ul li a {
+  border-radius: 8px;
+  padding: 8px 15px;
+  transition: 0.2s;
+  display: block;
+}
+.nabvar-ul li a:hover {
+  background: #ffcffd80;
+  color: #545454;
+}
+.active {
+  background-color: #ffcffd;
+  font-weight: 600;
+}

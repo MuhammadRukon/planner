@@ -1,37 +1,78 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Shared/Navbar/Navbar";
-// import { useContext } from "react";
-// import { AuthContext } from "../../provider/AuthProvider";
+import SocialLogin from "../../shared/SocialLogin";
+import { useContext, useRef, useState } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
-  //   const { signInUser } = useContext(AuthContext);
-  //   const location = useLocation();
-  //   console.log(location);
-  //   const navigate = useNavigate();
-  //   const handleLogin = (e) => {
-  //     e.preventDefault();
-  //     // const email = e.target.email.value;
-  //     // const password = e.target.password.value;
+  const { createUser, updateUser } = useContext(AuthContext);
+  const formRef = useRef(null);
+  const [errorMsg, setErrorMsg] = useState("");
+  const handleRegister = (e) => {
+    setErrorMsg("");
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const password = form.get("password");
+    if (!/.*[A-Z].*/.test(password)) {
+      setErrorMsg("password should contain atleast one capital letter");
+      return;
+    }
+    if (!/.*[!@#$%^&*()_+{}[\]:;<>,.?~\\|/-].*/.test(password)) {
+      setErrorMsg("password should contain atleast one special character");
+      return;
+    }
+    if (!/^.{6,}$/.test(password)) {
+      setErrorMsg("password should be 6 or more characters long");
+      return;
+    }
 
-  //     const form = new FormData(e.currentTarget);
-  //     const email = form.get("email");
-  //     const password = form.get("password");
-  //     signInUser(email, password)
-  //       .then(() => navigate(location?.state ? location.state : "/"))
-  //       .catch((error) => console.log(error.message));
-  //   };
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        updateUser(name, photo)
+          .then(() => console.log("user Updated"))
+          .catch((error) => console.log(error.message));
+      })
+      .catch((error) => {
+        setErrorMsg(error.message);
+      });
+    formRef.current.reset();
+  };
   return (
     <>
-      <Navbar />
       <div>
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen">
           <div className="hero-content flex-col">
             <div className="text-center">
-              <h1 className="text-5xl font-bold">Login now!</h1>
+              <h1 className="text-5xl font-bold font-primary">Register now!</h1>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <div className="card flex-shrink-0 w-full max-w-sm  bg-[#ffcffd80] border">
               <div className="card-body">
-                <form>
+                <form onSubmit={handleRegister} ref={formRef}>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Name</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                      className="input input-bordered focus:outline-none"
+                    />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Photo URL</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="photo"
+                      placeholder="photo-url"
+                      className="input input-bordered focus:outline-none"
+                    />
+                  </div>
                   <div className="form-control">
                     <label className="label">
                       <span className="label-text">Email</span>
@@ -40,7 +81,7 @@ const Register = () => {
                       type="email"
                       name="email"
                       placeholder="email"
-                      className="input input-bordered"
+                      className="input input-bordered focus:outline-none"
                     />
                   </div>
                   <div className="form-control">
@@ -51,16 +92,20 @@ const Register = () => {
                       type="password"
                       name="password"
                       placeholder="password"
-                      className="input input-bordered"
+                      className="input input-bordered focus:outline-none"
                     />
                   </div>
+                  <p>{errorMsg ? errorMsg : ""}</p>
                   <div className="form-control mt-6">
-                    <button className="btn btn-primary">Login</button>
+                    <button className="btn bg-primary hover:bg-primary border-none">
+                      Register
+                    </button>
                   </div>
                 </form>
+                <SocialLogin />
                 <p>
                   Already have an account? Please{" "}
-                  <Link className="text-green-700" to="/register">
+                  <Link className="text-green-700" to="/login">
                     Login
                   </Link>
                 </p>
