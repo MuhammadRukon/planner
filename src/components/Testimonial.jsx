@@ -9,7 +9,7 @@ const Testimonial = () => {
   }, []);
   return (
     <div className="container mx-auto mb-24" data-aos="fade-up">
-      <h2 className="text-center mt-20 font-bold font-primary text-5xl">
+      <h2 className="text-center mt-20 font-bold font-primary text-4xl md:text-5xl">
         Our Happy Clients
       </h2>
       <div className="carousel w-full mt-16 rounded-lg">
