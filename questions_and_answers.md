@@ -20,7 +20,7 @@ console.log(greetign);
 
 #### Answer: ?
 
-<i>Because it creates a property in the global object. This isn't same as variable declaration.</i>
+<i>in browser JS environment, objects assigned in variables without datatype such as let, const and var create property in the global object. This isn't same as regular variable declaration in Node.js. In Node.js, you will get "ReferenceError: greetign is not defined".</i>
 
 </p>
 </details>
