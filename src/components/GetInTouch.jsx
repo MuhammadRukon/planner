@@ -9,12 +9,12 @@ const GetInTouch = () => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
-    <div className="bg-[#ffcffd30]" data-aos="fade-up">
+    <div className="bg-[#ffcffd30] px-6 lg:px-0" data-aos="fade-up">
       <div className="container mx-auto pb-14">
         <h2 className="text-center pt-20 font-bold font-primary text-5xl">
           Get In Touch
         </h2>
-        <div className="flex justify-between mt-16 gap-6">
+        <div className="flex flex-col lg:flex-row justify-between mt-16 gap-6">
           <div className="flex-1">
             <GoogleMap />
           </div>

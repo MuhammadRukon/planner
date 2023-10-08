@@ -8,7 +8,7 @@ const Details = () => {
   const { image, title, cost, description } = data;
 
   return (
-    <div className="hero h-[70vh] bg-[#ffcffd40]">
+    <div className="hero 3xl:h-[70vh] pt-10 xl:pt-20 bg-[#ffcffd40]">
       <div className="hero-content p-8 max-w-full gap-10 justify-between flex-col lg:flex-row">
         <div className="flex-1">
           <img

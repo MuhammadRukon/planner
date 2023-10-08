@@ -6,10 +6,10 @@ const Blog = ({ data }) => {
   const shortBlog = blog.slice(0, 400);
   return (
     <div className="hero bg-[#ffcffd70]">
-      <div className="hero-content max-w-full p-20 flex-col lg:flex-row bg">
+      <div className="hero-content max-w-full p-10 md:p-20 flex-col lg:flex-row bg">
         <div>
-          <h1 className="text-3xl font-semibold">Blog No: {id}</h1>
-          <h1 className="text-5xl font-bold mt-8">{title}</h1>
+          <h1 className="text-2xl md:text-3xl font-semibold">Blog No: {id}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mt-8">{title}</h1>
           <p className="py-6 text-lg">
             {isOpen ? blog : shortBlog}
             <span
