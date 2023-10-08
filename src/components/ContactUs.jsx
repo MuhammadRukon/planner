@@ -10,7 +10,7 @@ const ContactUs = () => {
     <div className="bg-[#ffcffd60] p-10 rounded-lg">
       <h2 className="text-left font-bold font-primary text-4xl">Contact Us</h2>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={(e) => handleSubmit(e)}
         ref={formRef}
         className="card-body p-0 mt-7"
       >

@@ -11,7 +11,7 @@ const Services = ({ datas }) => {
   }, []);
   datas = useLoaderData();
   return (
-    <div className="container mx-auto px-6 lg:px-0" data-aos="fade-right">
+    <div className="container mx-auto px-6 lg:px-0" data-aos="fade-up">
       <h2 className="text-center mt-20 font-bold font-primary text-5xl">
         Our Services
       </h2>

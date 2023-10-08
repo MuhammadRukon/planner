@@ -8,7 +8,7 @@ const Testimonial = () => {
     Aos.init({ duration: 1500 });
   }, []);
   return (
-    <div className="container mx-auto mb-24" data-aos="fade-left">
+    <div className="container mx-auto mb-24" data-aos="fade-up">
       <h2 className="text-center mt-20 font-bold font-primary text-5xl">
         Our Happy Clients
       </h2>

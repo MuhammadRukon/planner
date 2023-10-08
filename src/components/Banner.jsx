@@ -24,7 +24,7 @@ const Banner = () => {
                 celebration that captures the true essence of your love.
               </p>
               <Link
-                to="/book"
+                to="/"
                 className="btn bg-primary font-primary border-none hover:bg-primary"
               >
                 Book Now
