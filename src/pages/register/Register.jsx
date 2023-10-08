@@ -64,6 +64,7 @@ const Register = () => {
                     <input
                       type="text"
                       name="name"
+                      required
                       placeholder="name"
                       className="input input-bordered focus:outline-none"
                     />
@@ -75,6 +76,7 @@ const Register = () => {
                     <input
                       type="text"
                       name="photo"
+                      required
                       placeholder="photo-url"
                       className="input input-bordered focus:outline-none"
                     />
@@ -86,6 +88,7 @@ const Register = () => {
                     <input
                       type="email"
                       name="email"
+                      required
                       placeholder="email"
                       className="input input-bordered focus:outline-none"
                     />

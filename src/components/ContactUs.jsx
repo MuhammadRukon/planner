@@ -1,8 +1,19 @@
+import { useRef } from "react";
+
 const ContactUs = () => {
+  const formRef = useRef(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    formRef.current.reset();
+  };
   return (
     <div className="bg-[#ffcffd60] p-10 rounded-lg">
       <h2 className="text-left font-bold font-primary text-4xl">Contact Us</h2>
-      <form className="card-body p-0 mt-7">
+      <form
+        onSubmit={handleSubmit}
+        ref={formRef}
+        className="card-body p-0 mt-7"
+      >
         <div className="flex flex-col md:flex-row gap-4">
           <div className="form-control  flex-1">
             <label className="label">
