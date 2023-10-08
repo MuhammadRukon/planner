@@ -12,12 +12,15 @@ const Profile = () => {
           <img className="w-[20vw]" src={photoURL} alt="" />
         </div>
         <div className="flex  flex-col gap-4">
-          <h2 className="text-2xl">
-            User Name: <span className="capitalize"> {displayName}</span>
+          <h2 className="text-2xl font-bold">
+            User Name:{" "}
+            <span className="capitalize font-medium"> {displayName}</span>
           </h2>
-          <p className="text-2xl">Email Address: {email}</p>
+          <p className="text-2xl font-bold">
+            Email Address: <span className=" font-medium">{email}</span>
+          </p>
 
-          <div className="text-2xl flex items-center gap-2">
+          <div className="text-2xl flex items-center gap-2 font-bold">
             Varified:{" "}
             {emailVerified ? (
               <div className="text-green-600">

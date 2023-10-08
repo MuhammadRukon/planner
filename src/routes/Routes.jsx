@@ -8,6 +8,7 @@ import Services from "../components/Services";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/error/ErrorPage";
 import Profile from "../pages/profile/Profile";
+import Blogs from "../pages/blogs/Blogs";
 
 export const router = createBrowserRouter([
   {
@@ -38,8 +39,9 @@ export const router = createBrowserRouter([
         loader: () => fetch("/data.json"),
       },
       {
-        path: "/blog",
-        element: <p>blog</p>,
+        path: "/blogs",
+        element: <Blogs />,
+        loader: () => fetch("/blog.json"),
       },
       {
         path: "/profile",
