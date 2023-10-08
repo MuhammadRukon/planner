@@ -4,8 +4,8 @@ import { AuthContext } from "../provider/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useLocation, useNavigate } from "react-router-dom";
-
-const SocialLogin = () => {
+import PropTypes from "prop-types";
+const SocialLogin = ({ handleError }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { signInWithGoogle } = useContext(AuthContext);
@@ -13,14 +13,14 @@ const SocialLogin = () => {
     signInWithGoogle()
       .then(() => {
         toast.success("Succesfully Logged In!", {
-          autoClose: 2000,
+          autoClose: 1800,
         });
         setTimeout(
           () => navigate(location?.state ? location.state : "/"),
-          3000
+          2000
         );
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => handleError(error.message));
   };
   return (
     <>
@@ -35,5 +35,7 @@ const SocialLogin = () => {
     </>
   );
 };
-
+SocialLogin.propTypes = {
+  handleError: PropTypes.func,
+};
 export default SocialLogin;

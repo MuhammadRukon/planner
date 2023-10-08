@@ -34,12 +34,12 @@ const Register = () => {
     createUser(email, password)
       .then(() => {
         toast.success("Succesfully Signed Up!", {
-          autoClose: 3000,
+          autoClose: 1800,
         });
         updateUser(name, photo)
           .then(() => console.log("user Updated"))
           .catch((error) => console.log(error.message));
-        setTimeout(() => navigate("/"), 3000);
+        setTimeout(() => navigate("/"), 2300);
       })
       .catch((error) => {
         setErrorMsg(error.message);

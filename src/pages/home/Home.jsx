@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 import Services from "../../components/Services";
 import Banner from "../../components/banner";
 import Testimonial from "../../components/Testimonial";
-
 import GetInTouch from "../../components/GetInTouch";
 
 const Home = () => {

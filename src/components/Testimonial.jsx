@@ -1,7 +1,14 @@
 import { AiFillStar } from "react-icons/ai";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const Testimonial = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
-    <div className="container mx-auto mb-24">
+    <div className="container mx-auto mb-24" data-aos="fade-left">
       <h2 className="text-center mt-20 font-bold font-primary text-5xl">
         Our Happy Clients
       </h2>

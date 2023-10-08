@@ -20,11 +20,11 @@ const Login = () => {
     loginUser(email, password)
       .then(() => {
         toast.success("Succesfully Logged In!", {
-          autoClose: 2000,
+          autoClose: 1500,
         });
         setTimeout(
           () => navigate(location?.state ? location.state : "/"),
-          3000
+          2300
         );
       })
       .catch((error) => setErrorMsg(error.message));
@@ -68,14 +68,14 @@ const Login = () => {
                       Forgot password?
                     </a>
                   </label>
-                  <p>{errorMsg}</p>
+                  <p className="text-red-600">{errorMsg}</p>
                   <div className="form-control mt-6">
                     <button className="btn border-none hover:bg-primary bg-primary">
                       Login
                     </button>
                   </div>
                 </form>
-                <SocialLogin />
+                <SocialLogin handleError={setErrorMsg} />
                 <p>
                   Dont have an account? Please{" "}
                   <Link className="text-blue-500 font-bold" to="/register">
