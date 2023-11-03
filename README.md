@@ -1,6 +1,6 @@
 Website Name: Planner
 
-Live Link:
+Live Link:  https://event-management-5ae54.web.app/
 
 Feature 1: The Datas in the Service section in dynamic and user can click on wedding program button too see the details.
 
